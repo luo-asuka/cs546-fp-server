@@ -1,0 +1,23 @@
+{
+  "name": "cs546-fp-server",
+  "version": "1.0.0",
+  "description": "Final Project server part",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luo-asuka/cs546-fp-server.git"
+  },
+  "author": "Chi Luo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luo-asuka/cs546-fp-server/issues"
+  },
+  "homepage": "https://github.com/luo-asuka/cs546-fp-server#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
