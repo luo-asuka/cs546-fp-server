@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/luo-asuka/cs546-fp-server#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.10",
+    "uuid": "^3.3.2"
   }
 }
