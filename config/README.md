@@ -34,6 +34,7 @@ The user collection will store all users and the items they are selling or have 
 | hashedPassword | string | A bcrypted string that is a hashed version of the user's password |
 | email | string | The email address of the user |
 | itemList | array of items | The items that the user is selling or has sold | 
+| msgList | array of mid | List of message id |
 
 ## Item List (subdocument; not stored in a collection)
 
@@ -57,9 +58,9 @@ This subdocument is used to stroe the items that post by an user.
 
 | Name | Type | Description |
 |------|------|-------------|
-| name | string | The user's name. | 
-| hobby | string | A line of text that represents the user's hobby. |
-| _id  | string | A globally unique identifier to represent the user |
+| title | string | Item title | 
+| iid  | string | Item id |
+
 
 ## Items
 
@@ -89,6 +90,7 @@ The item collection will stroe all the items and any information related to them
 | originalPrice  | number | The original listed price |
 | currentPrice  | number | The current selling price |
 | tags | array of string | The tags or the categories |
+| pic  | array of string | File paths of images |
 
 
 
