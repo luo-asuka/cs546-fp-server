@@ -1,9 +1,9 @@
-const user = require("../config/mongoCollections").user;
+const users = require("../config/mongoCollections").user;
 
 module.exports = {
 
 	async addUser(user) {
-		const userCollection = await user();
+		const userCollection = await users();
 		let newUer = {
 			uid: user.uid,
 			hashedPassword: user.hashedPassword,
@@ -16,8 +16,8 @@ module.exports = {
 	},
 
 	async getUser(uid) {
-		const userCollection = await user();
-		const user = await userCollection.findOne({uid: uid});
+		const userCollection = await users();
+		const user = await userCollection.findOne({"uid": uid});
 		return user;
 
 	},
@@ -27,7 +27,7 @@ module.exports = {
 	},
 
 	async addItem(uid, iid) {
-		const userCollection = await user();
+		const userCollection = await users();
 		let user = this.getUser(uid);
 		let itemList = user.itemList;
 		itemList.push(iid);
@@ -35,8 +35,17 @@ module.exports = {
 								{ $set: {"itemList": itemList} } );
 	},
 
+	async addOrder(uid, oid) {
+		const userCollection = await users();
+		let user = this.getUser(uid);
+		let itemList = user.itemList;
+		orderList.push(oid);
+		userCollection.update(	{ "uid": uid },
+								{ $set: {"itemList": orderList} } );
+	},
+
 	async receiveMsg(uid, mid) {
-		const userCollection = await user();
+		const userCollection = await users();
 		let user = this.getUser(uid);
 		let msgList = user.msgList;
 		msgList.push(mid);

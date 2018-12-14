@@ -15,14 +15,9 @@ The user collection will store all users and the items they are selling or have 
 	"uid":"cluo",
 	"hashedPassword":"$2a$08$XdvNkfdNIL8Fq7l8xsuIUeSbNOFgK0M0iV5HOskfVn7.PWncShU.O",
 	"email":"cluo@gamil.com",
-	"itemList":[
-		{
-			"iid":"item1"
-		},
-		{
-			"iid":"item2"
-		}
-	]
+	"itemList":["item1", "item2"]
+	"msgList": ["msg1", "msg2"]
+	"orderList": ["order1", "order2"]
 }
 ```
 
@@ -33,6 +28,7 @@ The user collection will store all users and the items they are selling or have 
 | email | string | The email address of the user |
 | itemList | array of items | The items that the user is selling or has sold | 
 | msgList | array of mid | List of message id |
+| orderList | array of oid | List of the order the user is selling |
 
 ## Item List (subdocument; not stored in a collection)
 
@@ -40,10 +36,7 @@ This subdocument is used to stroe the items that post by an user.
 
 ```
 {
-	"itemList": [
-		"iid":"item1",
-		"iid":"item2"
-	]
+	"itemList": ["item1", "item2"]
 }
 
 ```

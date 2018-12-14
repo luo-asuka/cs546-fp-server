@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const data = require("../data");
-const usersData = data.user;
+const usersData = data.users;
 
 const saltRounds = 10;
 
@@ -18,7 +18,7 @@ router.post("/signup", async (req, res) => {
 	const password = req.body.password;
 	const email = req.body.email;
 
-	const hashedPassword = bcrypt.hashSync(password, saltRounds);
+	const hashedPassword = await bcrypt.hash(password, saltRounds);
 	const user = {
 		uid: uid,
 		hashedPassword: hashedPassword,
