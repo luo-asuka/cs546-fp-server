@@ -18,7 +18,7 @@ module.exports = {
 		const itemCollection = await items();
 		const itemList = await itemCollection.find({"tag": tag});
 		return itemList;
-	}
+	},
 
 	async getItemsByUser(uid) {
 		const itemCollection = await items();
