@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "addall": "git add -f * && git rm -r node_modules\\"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,6 @@
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.4",
-    "mongodb": "^3.1.10",
-    "uuid": "^3.3.2"
+    "mongodb": "^3.1.10"
   }
 }
