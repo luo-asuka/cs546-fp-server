@@ -1,10 +1,10 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-// const exphbs = require("express-handlebars");
+const exphbs = require("express-handlebars");
 const app = express();
 
-// const static = express.static(__dirname + "/public");
+const static = express.static(__dirname + "/public");
 
 const configRoutes = require("./routes");
 
@@ -13,10 +13,10 @@ const configRoutes = require("./routes");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-// app.use("/public", static);
+app.use("/public", static);
 
-// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-// app.set("view engine", "handlebars");
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 configRoutes(app);
 

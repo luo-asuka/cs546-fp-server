@@ -8,7 +8,7 @@ const usersData = data.users;
 router.get("/", (req, res) => {
 	if (req.cookies.AuthCookie) {
 		//logged in
-		res.redirect("/items");
+		res.redirect("/itemlist");
 	}
 	else {
 		res.render("login");

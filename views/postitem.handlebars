@@ -1,0 +1,46 @@
+<form id="post-item-form" method="post" action="/postitem">
+	<div class="center">
+		<label for="title">Title</label>
+		<br>
+		<input type="text" name="title" id="title">
+		<br>
+
+		<label for="condition">Condition</label>
+		<br>
+		<input type="text" name="condition" id="condition">
+		<br>
+
+		<label for="description">Description</label>
+		<br>
+		<input type="text" name="description" id="description">
+		<br>
+
+		<label for="originalPrice">Original Price</label>
+		<br>
+		<input type="number" name="originalPrice" id="originalPrice" min="1">
+		<br>
+
+
+		<label for="currentPrice">Current Price</label>
+		<br>
+		<input type="number" name="currentPrice" id="currentPrice" min="1">
+		<br>
+
+		<label for="tag">Tag</label>
+		<br>
+		<input type="text" name="tag" id="tag">
+		<br>
+
+		<label for="pic">Pic</label>
+		<br>
+		<input type="file" name="pic" id="pic">
+		<br>
+
+		<button type="submit">Sell</button>
+	</div>
+</form>
+{{#if error}}
+<div class="error">
+	<p>Error: {{error}}</p>
+</div>
+{{/if}}

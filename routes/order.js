@@ -35,6 +35,11 @@ router.post("/", async (req, res) => {
 
 
 router.get("/:oid", async (req, res) => {
+	if (!req.cookies.AuthCookie) {
+		//not logged in yet
+		res.redirect("/login");
+	}
+	
 	const oid = req.params.oid;
 	const order = await ordersData.getOder(oid);
 	if (order) {

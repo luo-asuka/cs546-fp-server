@@ -4,6 +4,15 @@ const data = require("../data");
 const itemsData = data.items;
 const usersData = data.users;
 
+router.get("/", (req, res) => {
+	// if (!req.cookies.AuthCookie) {
+	// 	//not logged in yet
+	// 	res.redirect("/login");
+	// 	return;
+	// }
+	res.render("postitem");
+});
+
 router.post("/", async (req, res) => {
 	const uid = req.cookies.AuthCookie;		//seller id
 	const title = req.body.title;
