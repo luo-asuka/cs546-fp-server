@@ -17,11 +17,9 @@ The user collection will store all users and the items they are selling or have 
 	"email":"cluo@gamil.com",
 	"itemList":[
 		{
-			"title":"ipad mini",
 			"iid":"item1"
 		},
 		{
-			"title":"keyboard",
 			"iid":"item2"
 		}
 	]
@@ -43,14 +41,8 @@ This subdocument is used to stroe the items that post by an user.
 ```
 {
 	"itemList": [
-		{
-			"title":"ipad mini",
-			"iid":"item1"
-		},
-		{
-			"title":"keyboard",
-			"iid":"item2"
-		}
+		"iid":"item1",
+		"iid":"item2"
 	]
 }
 
@@ -58,7 +50,6 @@ This subdocument is used to stroe the items that post by an user.
 
 | Name | Type | Description |
 |------|------|-------------|
-| title | string | Item title | 
 | iid  | string | Item id |
 
 
@@ -89,7 +80,7 @@ The item collection will stroe all the items and any information related to them
 | condition  | string | Condition of the item (may include: brand new, used - good, used - acceptable, or others) |
 | originalPrice  | number | The original listed price |
 | currentPrice  | number | The current selling price |
-| tags | array of string | The tags or the categories |
+| tag  | string | A single tag for the item |
 | pic  | array of string | File paths of images |
 
 
@@ -141,6 +132,5 @@ The messages sent by all users.
 | fromid | string | The uid of the sender |
 | toid | string | The uid of the receiver |
 | content | string | The actual content of a message   |
-| status | string | The current status of this order (coubld be: processing, canceled, completed) | 
 | isRead | boolean | A boolean value to state wheter the receiver has opened the message  | 
 
