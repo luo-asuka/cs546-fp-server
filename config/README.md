@@ -57,7 +57,7 @@ The item collection will stroe all the items and any information related to them
 	"condition":"used good",
 	"originalPrice":499.00,
 	"currentPrice":100.00,
-	"tags": "electronic"
+	"tag": "electronic"
 }
 
 ```

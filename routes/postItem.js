@@ -4,7 +4,7 @@ const data = require("../data");
 const itemsData = data.items;
 const usersData = data.users;
 
-router.post("/", asnyc (req, res) => {
+router.post("/", async (req, res) => {
 	const uid = req.cookies.AuthCookie;		//seller id
 	const title = req.body.title;
 	const iid = uid + "_" + title;

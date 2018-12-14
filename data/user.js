@@ -4,14 +4,7 @@ module.exports = {
 
 	async addUser(user) {
 		const userCollection = await users();
-		let newUer = {
-			uid: user.uid,
-			hashedPassword: user.hashedPassword,
-			email: user.email,
-			itemList: [],
-			msgList: []
-		};
-		const newInsertInformation = await userCollection.insertOne(newUer);
+		const newInsertInformation = await userCollection.insertOne(user);
 		return newInsertInformation;
 	},
 
@@ -28,7 +21,7 @@ module.exports = {
 
 	async addItem(uid, iid) {
 		const userCollection = await users();
-		let user = this.getUser(uid);
+		let user = await this.getUser(uid);
 		let itemList = user.itemList;
 		itemList.push(iid);
 		userCollection.update(	{ "uid": uid },
@@ -37,7 +30,7 @@ module.exports = {
 
 	async addOrder(uid, oid) {
 		const userCollection = await users();
-		let user = this.getUser(uid);
+		let user = await this.getUser(uid);
 		let itemList = user.itemList;
 		orderList.push(oid);
 		userCollection.update(	{ "uid": uid },
@@ -46,7 +39,7 @@ module.exports = {
 
 	async receiveMsg(uid, mid) {
 		const userCollection = await users();
-		let user = this.getUser(uid);
+		let user = await this.getUser(uid);
 		let msgList = user.msgList;
 		msgList.push(mid);
 		userCollection.update(	{ "uid": uid },

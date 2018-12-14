@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
 router.post("/", async (req, res) => {
 	const uid = req.body.username;
 	const password = req.body.password;
-	const user = usersData.getUser(uid);
+	const user = await usersData.getUser(uid);
 	if (user) {
 		//find user
 		const match = await bcrypt.compare(password, user.hashedPassword);
@@ -30,6 +30,7 @@ router.post("/", async (req, res) => {
 			expiresAt.setHours(expiresAt.getHours() + 24);
 			res.cookie("AuthCookie", uid, { expires: expiresAt });
 			res.redirect("/itemlist");
+			console.log("login success");
 		}
 		else {
 			//psaaword does not match

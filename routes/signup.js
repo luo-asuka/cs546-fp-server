@@ -7,13 +7,13 @@ const usersData = data.users;
 const saltRounds = 10;
 
 
-router.get("/signup", (req, res) => {
+router.get("/", (req, res) => {
 	res.render("signup");
 });
 
 
 
-router.post("/signup", async (req, res) => {
+router.post("/", async (req, res) => {
 	const uid = req.body.username;
 	const password = req.body.password;
 	const email = req.body.email;
@@ -22,9 +22,10 @@ router.post("/signup", async (req, res) => {
 	const user = {
 		uid: uid,
 		hashedPassword: hashedPassword,
-		email, email
+		email: email,
+		itemList: [],
+		msgList: []
 	};
-
 	try {
 		await usersData.addUser(user);
 		res.redirect("/login");
