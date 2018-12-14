@@ -14,5 +14,5 @@ final project server part
 | POST | /order  | seller create a new order with {buyerid, itemid} |
 | GET  | /order/:oid | get the order obeject |
 | POST | /order/status/:oid | update the status of the oid with {status} |
-| GET  | /itemlist | get all the items (not impelated) |
-| GET  | /itemlist/:tag | get all the items with tag(not impelated) |
+| GET  | /itemlist | get all the items (not implemented) |
+| GET  | /itemlist/:tag | get all the items with tag(not implemented) |
