@@ -24,8 +24,7 @@ module.exports = {
 		let user = await this.getUser(uid);
 		let itemList = user.itemList;
 		itemList.push(iid);
-		userCollection.update(	{ "uid": uid },
-								{ $set: {"itemList": itemList} } );
+		userCollection.update( { "uid": uid }, { $set: {"itemList": itemList} } );
 	},
 
 	async addOrder(uid, oid) {
@@ -33,8 +32,7 @@ module.exports = {
 		let user = await this.getUser(uid);
 		let itemList = user.itemList;
 		orderList.push(oid);
-		userCollection.update(	{ "uid": uid },
-								{ $set: {"itemList": orderList} } );
+		userCollection.update( { "uid": uid }, { $set: {"itemList": orderList} } );
 	},
 
 	async receiveMsg(uid, mid) {
@@ -42,8 +40,7 @@ module.exports = {
 		let user = await this.getUser(uid);
 		let msgList = user.msgList;
 		msgList.push(mid);
-		userCollection.update(	{ "uid": uid },
-								{ $set: {"msgList": msgList} } );
+		userCollection.update( { "uid": uid }, { $set: {"msgList": msgList} } );
 	}
 
 }

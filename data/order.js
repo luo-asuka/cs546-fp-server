@@ -17,20 +17,17 @@ module.exports = {
 
 	async updateStatus(oid, newStatus) {
 		const orderCollection = await orders();
-		orderCollection.update( { "oid": oid },
-								{ $set: {"status": newStatus} });
+		orderCollection.update( { "oid": oid }, { $set: {"status": newStatus} });
 	},
 
 	async addBuyerCmt(oid, comment) {
 		const orderCollection = await orders();
-		orderCollection.update( { "oid": oid },
-								{ $set: {"buyerComment": comment} });
+		orderCollection.update( { "oid": oid }, { $set: {"buyerComment": comment} });
 	},
 
 	async addSellerCmt(oid, comment) {
 		const orderCollection = await orders();
-		orderCollection.update( { "oid": oid },
-								{ $set: {"sellerComment": comment} });
+		orderCollection.update( { "oid": oid }, { $set: {"sellerComment": comment} });
 	}
 }
 
